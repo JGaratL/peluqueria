@@ -124,7 +124,7 @@ app.get('/appointments/:clienteId', authenticateJWT, async (req, res) => {
 
         const userId = req.user.id; // Suponiendo que guardas el ID del usuario en el token JWT
 
-        if (clienteId !== userId) {
+        if (clienteId != userId) {
             return res.status(403).json({ message: 'No tienes permiso para acceder a estas citas.' });
         }
 
